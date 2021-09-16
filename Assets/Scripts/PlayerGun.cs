@@ -29,6 +29,7 @@ public class PlayerGun : MonoBehaviour
 
     public void Shoot()
     {
+
         if (lastTimeShoot + firingSpeed <= Time.time)
         {
             lastTimeShoot = Time.time;
