@@ -33,4 +33,18 @@ public class Projectile : MonoBehaviour
             transform.Translate(Vector3.forward * projectileSpeed * Time.deltaTime);
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        EnemySlime enemySlime;
+
+        if (collision.transform.tag == "Enemy")
+        {
+            enemySlime = collision.transform.GetComponent<EnemySlime>();
+            enemySlime.health--;
+            Destroy(this.gameObject);
+        }
+    }
+
+
 }
