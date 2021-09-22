@@ -10,6 +10,7 @@ public class EnemySlime : MonoBehaviour
 
     public Transform target;
     public float speed = 0f;
+    public GameObject dropItem;
     Rigidbody rig;
 
     // Start is called before the first frame update
@@ -33,6 +34,10 @@ public class EnemySlime : MonoBehaviour
      private void Death()
      {
         anim.SetBool("isDead", true);
-        Destroy(gameObject, 2);
+        Destroy(gameObject, 1.5f);
+        Vector3 position = transform.position;
+        GameObject Potion = Instantiate(dropItem, transform.position, dropItem.transform.rotation);
+        Potion.SetActive(true);
+        Destroy(Potion, 5f);
     }
 }
