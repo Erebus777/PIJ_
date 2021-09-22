@@ -44,6 +44,11 @@ public class Projectile : MonoBehaviour
             enemySlime.health--;
             Destroy(this.gameObject);
         }
+
+        if (collision.transform.tag == "Obstacles")
+        {
+            Destroy(this.gameObject);
+        }
     }
 
 
