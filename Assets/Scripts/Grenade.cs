@@ -9,6 +9,7 @@ public class Grenade : MonoBehaviour
     public float delay = 3f;
     public float explosionForce = 10f;
     public float radius = 20f;
+    public int damage = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,12 @@ public class Grenade : MonoBehaviour
 
     }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+
+        Gizmos.DrawWireSphere(transform.position, radius);
+    }
 
     //Method tha make the grenade explode;
     private void Explode()
@@ -36,6 +43,13 @@ public class Grenade : MonoBehaviour
 
             if (rig != null)
                 rig.AddExplosionForce(explosionForce, transform.position, radius, 1f, ForceMode.Impulse);
+
+            EnemySlime slime = near.GetComponent<EnemySlime>();
+
+            if(slime != null)
+            {
+                slime.TakeDamage(damage);
+            }
         }
 
         //Explosion Effect;
@@ -45,13 +59,20 @@ public class Grenade : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        EnemySlime enemySlime;
+        if (collision.transform.tag == "Enemy" ||
+            collision.transform.tag == "Obstacles")
+        {
+            CancelInvoke("Explode");
+            Explode();
+            Destroy(this.gameObject);
+        }
+        /*EnemySlime enemySlime;
 
         if (collision.transform.tag == "Enemy")
         {
             enemySlime = collision.transform.GetComponent<EnemySlime>();
             enemySlime.health--;
             Destroy(this.gameObject);
-        }
+        }*/
     }
 }

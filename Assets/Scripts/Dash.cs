@@ -26,7 +26,14 @@ public class Dash : MonoBehaviour
     private void FixedUpdate()
     {
         if (isDashing)
+        {
             Dashing();
+        }
+        else
+        {
+            rig.velocity = Vector3.zero;
+        }
+
     }
 
     private void Dashing()

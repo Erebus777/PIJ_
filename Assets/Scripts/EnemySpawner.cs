@@ -4,30 +4,30 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    public Transform target;
     public GameObject theEnemy;
     public int xPos;
     public int zPos;
     public int enemyCount;
+    public int maxEnemies;
 
     void Start()
     {
         StartCoroutine(EnemyDrop());
     }
 
-    public void Update()
-    {
-        StartCoroutine(EnemyDrop());
-    }
-
     IEnumerator EnemyDrop()
     {
-        if (enemyCount < 10)
+        while (enemyCount < maxEnemies)
         {
             xPos = Random.Range(1, 15);
             zPos = Random.Range(1, 10);
-            Instantiate(theEnemy, new Vector3(xPos, 2.55f, zPos), Quaternion.identity);
+            GameObject newEnemy = Instantiate(theEnemy, new Vector3(xPos, 2.55f, zPos), Quaternion.identity);
+
+            EnemySlime slime = newEnemy.GetComponent<EnemySlime>();
+            slime.target = target;
             yield return new WaitForSeconds(0.1f);
-            enemyCount += 3;
+            enemyCount ++;
         }
     }
 
