@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 265212158}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -505,7 +505,7 @@ GameObject:
   - component: {fileID: 455651584}
   m_Layer: 0
   m_Name: Cube (9)
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -881,7 +881,7 @@ GameObject:
   - component: {fileID: 784805027}
   m_Layer: 0
   m_Name: Cube (4)
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -990,7 +990,7 @@ GameObject:
   - component: {fileID: 910182103}
   m_Layer: 0
   m_Name: Cube (12)
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1083,7 +1083,7 @@ GameObject:
   - component: {fileID: 1003132790}
   m_Layer: 0
   m_Name: Cube (8)
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1255,7 +1255,7 @@ GameObject:
   - component: {fileID: 1069270427}
   m_Layer: 0
   m_Name: Cube (15)
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1490,7 +1490,7 @@ GameObject:
   - component: {fileID: 1124592352}
   m_Layer: 0
   m_Name: Cube (14)
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1663,7 +1663,7 @@ GameObject:
   - component: {fileID: 1495805110}
   m_Layer: 0
   m_Name: Cube (3)
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6591,7 +6591,7 @@ GameObject:
   - component: {fileID: 1675129734}
   m_Layer: 0
   m_Name: Cube (11)
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6685,7 +6685,7 @@ GameObject:
   - component: {fileID: 1690972520}
   m_Layer: 0
   m_Name: Cube (6)
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6879,7 +6879,7 @@ GameObject:
   - component: {fileID: 1855873771}
   m_Layer: 0
   m_Name: Cube (16)
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7045,11 +7045,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 690eab4836d89564e955f6e3e2b7b0bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 1833754924}
   theEnemy: {fileID: 6187865975539693836, guid: fc6ab63a8bb9e1c47b3dd78918038c02,
     type: 3}
   xPos: 0
   zPos: 0
-  enemyCount: 2
+  enemyCount: 0
+  maxEnemies: 5
 --- !u!4 &1889386828
 Transform:
   m_ObjectHideFlags: 0
@@ -7078,7 +7080,7 @@ GameObject:
   - component: {fileID: 1979139276}
   m_Layer: 0
   m_Name: Cube (10)
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7243,6 +7245,17 @@ PrefabInstance:
       propertyPath: healthbar
       value: 
       objectReference: {fileID: 580831387}
+    - target: {fileID: 2094473385993898500, guid: 812b423bd48b89942966d182614849ab,
+        type: 3}
+      propertyPath: potDestroy
+      value: 
+      objectReference: {fileID: 417467677519492376, guid: 6229950e7ea44834f98e4728b1efd1e1,
+        type: 3}
+    - target: {fileID: 2094473385993898502, guid: 812b423bd48b89942966d182614849ab,
+        type: 3}
+      propertyPath: dashSpeed
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 2094473385993898502, guid: 812b423bd48b89942966d182614849ab,
         type: 3}
       propertyPath: dashEffect

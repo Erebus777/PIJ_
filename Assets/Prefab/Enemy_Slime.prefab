@@ -252,6 +252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
+  myCollider: {fileID: 6187865975539693839}
   target: {fileID: 2094473385993898503, guid: 812b423bd48b89942966d182614849ab, type: 3}
   speed: 5
   dropItem: {fileID: 417467677519492376, guid: 6229950e7ea44834f98e4728b1efd1e1, type: 3}

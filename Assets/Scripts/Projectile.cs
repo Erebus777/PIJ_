@@ -6,15 +6,21 @@ public class Projectile : MonoBehaviour
 {
     private Vector3 firingPoint;
 
+    public int damage = 2;
+
     [SerializeField]
     float projectileSpeed;
 
     [SerializeField]
     private float maxProjectileDistance;
 
+    public Rigidbody rig;
+
     void Start()
     {
         firingPoint = transform.position;
+
+        rig.AddForce(transform.forward * projectileSpeed, ForceMode.Impulse);
     }
 
     void Update()
@@ -41,7 +47,7 @@ public class Projectile : MonoBehaviour
         if (collision.transform.tag == "Enemy")
         {
             enemySlime = collision.transform.GetComponent<EnemySlime>();
-            enemySlime.health--;
+            enemySlime.TakeDamage(damage);
             Destroy(this.gameObject);
         }
 

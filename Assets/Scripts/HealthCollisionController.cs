@@ -5,6 +5,7 @@ using UnityEngine;
 public class HealthCollisionController : MonoBehaviour
 {
     public HealthbarController healthbar;
+    public GameObject potDestroy;
 
     private void OnCollisionEnter(Collision collision)
     {

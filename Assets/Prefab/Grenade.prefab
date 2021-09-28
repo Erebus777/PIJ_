@@ -285,7 +285,8 @@ MonoBehaviour:
     type: 3}
   delay: 3
   explosionForce: 5
-  radius: 10
+  radius: 5
+  damage: 10
 --- !u!54 &-2351654893969558635
 Rigidbody:
   m_ObjectHideFlags: 0
